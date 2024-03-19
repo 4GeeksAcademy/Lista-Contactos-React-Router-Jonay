@@ -23,20 +23,11 @@ export const AddContact = () => {
                     <label for="exampleInputAddress" className="form-label">Address</label>
                     <input type="text" className="form-control" id="exampleInputAddress" aria-describedby="addressHelp" placeholder="Enter address" />
                 </div>
-                <button type="submit" className="btn btn-primary">save</button>
-                {/* <Link to="/addcontact"></Link>
-                <Link to="/">
-                    <span className="navbar-brand mb-0 h1">React Boilerplate</span>
-                </Link>
-                <div className="ml-auto">
-                    <Link to="/demo">
-                        <button className="btn btn-primary">Check the Context in action</button>
-                    </Link> */}
-                {/* </div> */}
+                <button type="submit" className="save btn btn-primary">save</button>
             </form>
-            {/* <Link to="/">
-// 				<button className="btn btn-primary mt-4">Back home</button>
-// 		</Link> */}
+            <Link to="/contact">
+				<span className="mb-0 h5">or get back to contacts</span>
+			</Link>
         </div>
         );
     };
