@@ -9,17 +9,17 @@ export const Contact = () => {
 	// const {store, actions}= useContext(Context)
 	// 	console.log(store.demo);
 
-	// const {Characters, setCharacters}= useState()	
+	// const {contacts, setContacts}= useState()	
 
-	// function getCharacters() {
+	// function getAllContacts() {
 	// 	fetch('https://playground.4geeks.com/apis/fake/contact/agenda')
 	// 	.then((response)=>response.json())
-	// 	.then((data)=>setCharacters(data.results))
+	// 	.then((data)=>setContacts(data.results))
 	// 	.catch((error)=>console.log(error))
 	// }
 
 	// useEffect(()=>{
-	// 	getCharacters()
+	// 	getAllContacts()
 	// },[])
 
 	return (

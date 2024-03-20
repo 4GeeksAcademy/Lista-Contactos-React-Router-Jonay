@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			demo: [
 
 			], 
-			// Characters: []
+			// contacts: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -12,10 +12,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 
-			// getCharacters: function () {
+			// getAllContacts: function () {
 			// 	fetch('https://playground.4geeks.com/apis/fake/contact/agenda')
 			// 	.then((response)=>response.json())
-			// 	.then((data)=>setStore({Characters: data.results}))
+			// 	.then((data)=>setStore({contacts: data.results}))
 			// 	.catch((error)=>console.log(error))
 			// 	/**
 			// 		fetch().then().then(data => setStore({ "foo": data.bar }))
