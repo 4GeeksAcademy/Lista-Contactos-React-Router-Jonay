@@ -19,11 +19,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
+
+			// getAllContacts: function () => {
+			// 	fetch('https://playground.4geeks.com/apis/fake/contact/agenda')
+			// 	.then((response)=>response.json())
+			// 	.then((data)=>console.log(data))
+			// 	.catch((error)=>console.log(error))
+			// 	/**
+			// 		fetch().then().then(data => setStore({ "foo": data.bar }))
+			// 	*/
+			// },
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
