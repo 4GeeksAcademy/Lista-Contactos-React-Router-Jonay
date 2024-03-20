@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Context } from "../store/appContext.js";
 import "../../styles/contactcard.css";
 
 
 export const ContactCard = () => {
+
+    const {store, actions}= useContext(Context)
+		console.log(store.demo);
+
 	return (
 	<div>
 		<div className="card">
