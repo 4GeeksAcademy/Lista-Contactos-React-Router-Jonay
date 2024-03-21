@@ -1,26 +1,53 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActions(), setStore() SON FUNCIONES
 	return {
-		store: {
+		store: { // EN STORE se guardan todos los estadoS GLOBALES
 			demo: [
-
+				{
+					title: "FIRST",
+					background: "white",
+					initial: "white"
+				},
+				{
+					title: "SECOND",
+					background: "white",
+					initial: "white"
+				}
 			], 
-			// contacts: []
+			contacts: []
 		},
-		actions: {
+		actions: { // EN ACTIONS SE GUARDAN TODAS LAS FUNCIONES GLOBALES
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
-			// getAllContacts: function () {
-			// 	fetch('https://playground.4geeks.com/apis/fake/contact/agenda')
-			// 	.then((response)=>response.json())
-			// 	.then((data)=>setStore({contacts: data.results}))
-			// 	.catch((error)=>console.log(error))
-			// 	/**
-			// 		fetch().then().then(data => setStore({ "foo": data.bar }))
-			// 	*/
-			// },
+			loadSomeData: () => {
+				/** 
+				   fetch().then().then()(data => setStore({ "foo": data.bar }))
+				*/
+			},
+			createUser: function () {
+				fetch('https://playground.4geeks.com/apis/fake/contact/',{
+				headers: {
+					"Request": "application/json"
+				},
+				body: {
+					"full_name": "Dave Bradley",
+					"email": "dave@gmail.com",
+					"agenda_slug": "my_super_agenda",
+					"address":"47568 NW 34ST, 33434 FL, USA",
+					"phone":"7864445566"
+				}
+			})
+				.then((response)=>response.json())
+				.then((data)=>console.log({contact: data}))
+				.catch((error)=>console.log(error))
+			},
+			getAllContacts: function () {
+				fetch('https://playground.4geeks.com/apis/fake/contact/agenda/jonay')
+				.then((response)=>response.json())
+				.then((data)=>setStore({contacts: data}))
+				.catch((error)=>console.log(error))
+			},
 
 			changeColor: (index, color) => {
 				//get the store

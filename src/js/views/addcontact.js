@@ -3,6 +3,11 @@ import "../../styles/addcontact.css";
 import { Link } from "react-router-dom";
 
 export const AddContact = () => {
+
+// -----------------FUNCION createContact() -------------//
+
+// Crear evento OnSubmit
+
 	return (
         <div className="form">
             <h1 className="title">Add a new contact</h1>
