@@ -6,3 +6,9 @@
     display: flex;
     flex-direction: row;
 } */
+
+.add-del {
+    display: flex;
+    justify-content: end;
+    
+}

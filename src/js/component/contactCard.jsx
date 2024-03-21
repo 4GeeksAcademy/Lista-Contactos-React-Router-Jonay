@@ -19,8 +19,10 @@ export const ContactCard = (contact) => {
 				<h6 className="phone-text"><i className="fa-solid fa-phone-flip"></i> {contact.contact?.phone}</h6>
 				<h6 className="email-text"><i className="fa-solid fa-envelope"></i> {contact.contact?.email}</h6>
 				{/* </div> */}
-				<i className="fa-solid fa-pencil"></i>
-				<i className="fa-solid fa-trash-can"></i>
+				<div className="add-del">
+					<i className="fa-solid fa-pencil"></i>
+					<i className="fa-solid fa-trash-can"></i>
+				</div>
 			</div>
 		</div>
   </div>

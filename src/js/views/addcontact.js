@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState} from "react";
 import "../../styles/addcontact.css";
 import { Link } from "react-router-dom";
 
 export const AddContact = () => {
 
-// -----------------FUNCION createContact() -------------//
+// -----------------FUNCION addContact() -------------//
+
+//     const [newContact,setNewContact]=useState({})
+//  	const [agenda,setAgenda]=useState([])
+
+// ////// -------------Esta funcion añade un contacto nueva en el Array al presionar ENTER----------------------////
+// 	function addcontact(event) {
+// 		// console.log(event);
+// 		if (event.key === "Enter") {
+// 			// console.log("Agregar contacto");
+// 			setAgenda(agenda.concat( {
+//                 "full_name": {contact.full_name},
+//                 "email": {contact.email},
+//                 "agenda_slug": "jonay",
+//                 "address":{contact.address},
+//                 "phone":{contact.phone}
+//             }))
+// 			setNewContact("");
+// 			putTask(agenda.concat( { label: newContact, done: false }));
+// 		}
+// 	}
+
+ 
 
 // Crear evento OnSubmit
 

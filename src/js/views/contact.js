@@ -13,21 +13,15 @@ export const Contact = () => {
 		// console.log(store.demo);   // DENTRO DE DEMO HAY UN ARRAY Y HAY QUE HACER UN .map PARA CONSULTARLO//
 
 	
-
+////// -------------Esta funcion elimina una position del Array por su indice----------------------////
+// function deletecontact(position) {
+// 	const arrayfiltered = agenda.filter((item, index) => index !== position)
+// 	setAgenda(arrayfiltered)
+// 	putTask(arrayfiltered);
+// 	}
 
 	// ---------------CREAR UNA ---- function create() --------------///
 	
-
-/**-----------------------------ANTIGUAMENTE SE CREARIA LA FUNCION AQUI EN EL COMPONENTE------------------------
-----------------------PERO COMO VA A SER UNA FUNCION GLOBAL LA VAMOS A CREAR EN FLUX ACTIONS---------------------*////
-			// function getAllContacts() {
-			// 	fetch('https://playground.4geeks.com/apis/fake/contact/agenda')
-			// 	.then((response)=>response.json())
-			// 	.then((data)=>setContacts(data[3]))
-			// 	.catch((error)=>console.log(error))
-			// }
-/**-----------------------------ANTIGUAMENTE SE CREARIA LA FUNCION AQUI EN EL COMPONENTE------------------------
-----------------------PERO COMO VA A SER UNA FUNCION GLOBAL LA VAMOS A CREAR EN FLUX ACTIONS---------------------*////
 
 // console.log(store.contacts); // Esta informacion la pasamos a flux en el Store por eso la llamamos así store.contacts
 
