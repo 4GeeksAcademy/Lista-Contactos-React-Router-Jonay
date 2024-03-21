@@ -1,0 +1,6 @@
+.boton-contact {
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+    margin-top: 20px;
+}

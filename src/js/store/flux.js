@@ -25,15 +25,15 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				   fetch().then().then()(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			createUser: function () {
+			createContact: function () {
 				fetch('https://playground.4geeks.com/apis/fake/contact/',{
 				headers: {
-					"Request": "application/json"
+					"Content-Type": "application/json"
 				},
 				body: {
 					"full_name": "Dave Bradley",
 					"email": "dave@gmail.com",
-					"agenda_slug": "my_super_agenda",
+					"agenda_slug": "jonay",
 					"address":"47568 NW 34ST, 33434 FL, USA",
 					"phone":"7864445566"
 				}

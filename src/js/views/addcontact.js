@@ -13,7 +13,7 @@ export const AddContact = () => {
             <h1 className="title">Add a new contact</h1>
             <form>
             <div className="mb-3">
-                    <label htmlFor="exampleInputName" className="form-label">Full name</label>
+                    <label htmlFor="exampleInputName" className="form-label"> Full name</label>
                     <input type="text" className="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Full name" />
                 </div>
                 <div className="mb-3">

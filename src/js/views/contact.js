@@ -15,7 +15,7 @@ export const Contact = () => {
 	
 
 
-	// ---------------CREAR UNA ---- function createUser() --------------///
+	// ---------------CREAR UNA ---- function create() --------------///
 	
 
 /**-----------------------------ANTIGUAMENTE SE CREARIA LA FUNCION AQUI EN EL COMPONENTE------------------------
@@ -37,9 +37,11 @@ export const Contact = () => {
 
 	return (
 	<div>
-		<Link to="/addcontact">
-					<button className="addbtn btn btn-success m-4 me-4">Add new contact</button>
-				</Link>
+		<div className="boton-contact">
+			<Link to="/addcontact">
+				<button className="btn btn-success">Add new contact</button>
+			</Link>
+		</div>
 				{
 					store.contacts.map((contact) => {
 						return (
