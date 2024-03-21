@@ -1,5 +1,8 @@
 .agenda {
-    display: flex;
     margin-left: 30px;
     margin-right: 30px;
 }
+/* .description {
+    display: flex;
+    flex-direction: row;
+} */
