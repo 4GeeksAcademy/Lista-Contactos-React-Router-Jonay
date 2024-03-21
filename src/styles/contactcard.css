@@ -10,5 +10,18 @@
 .add-del {
     display: flex;
     justify-content: end;
+    vertical-align: top;
     
 }
+.description {
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+/* .container {
+    width: auto;
+    height: 200px;
+    border: solid 1px grey;
+} */
