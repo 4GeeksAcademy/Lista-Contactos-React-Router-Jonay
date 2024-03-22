@@ -14,6 +14,13 @@ export const ContactCard = (contact) => {
 	// 	// deleteContact(filterContact)
 	// }
 	
+	// let objetos = store.contacts
+
+	// function handleDelete(id) {
+	// 	const filterContact = objetos.filter(objeto => objeto.id !== id)
+	// 	actions.deleteContact(filterContact)
+	// 	// deleteContact(filterContact)
+	// }
 
 	return (
 				<div className="card m-0">
