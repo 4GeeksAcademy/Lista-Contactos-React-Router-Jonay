@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext.js";
 import "../../styles/addcontact.css";
 import { Link } from "react-router-dom";
-import { Contact } from "./contact.js";
+// import { Contact } from "./contact.js";
 
 export const AddContact = () => {
 
@@ -12,26 +12,31 @@ export const AddContact = () => {
     const [address,setAddress]=useState("")
 
     const {store, actions}= useContext(Context)
-// -----------------FUNCION addContact() -------------//
+// -----------------------------------------------------FUNCION addContact() ------------------------------------------//
 
-//     const [newContact,setNewContact]=useState({})
-//  	const [agenda,setAgenda]=useState([])
-
-
+// ------------------------Modificar los datos del formulario JUNTO AL BODY DE FLUX----------------------------------//
 function handleSubmit(e) {
     e.preventDefault()
-    // actions.createContact(contact)
-    console.log(fullName,email,phone,address);
+    const contact= {
+        fullName,
+		email,
+		address,
+		phone
+    }
+    actions.createContact(contact)
+    // setFullName({}),
+    // setEmail({}),
+    // setAddress({}),
+    // setPhone({})
+    // console.log(fullName,email,phone,address);
 }
 
- 
 
 // Crear evento OnSubmit
-
 	return (
         <div className="form">
             <h1 className="title">Add a new contact</h1>
-            <form onSubmit={actions.createContact}>
+            <form onSubmit={handleSubmit}>
             <div className="mb-3">
                     <label htmlFor="exampleInputName" className="form-label"> Full name</label>
                     <input type="text" className="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Full name" onChange={(event) => {setFullName(event.target.value)}} />
@@ -57,3 +62,25 @@ function handleSubmit(e) {
         </div>
         );
     };
+
+
+
+
+
+
+
+    // ----------Otra Forma -----------DE---PASAR ESTA FUNCION AL EVENTO onSubmit------------------------//
+// function handleSubmit(e) {
+//     e.preventDefault()
+//     const contact= {
+//         "full_name": fullName,
+// 		"email": email,
+// 		"agenda_slug": "jonay",
+// 		"address": address,
+// 		"phone":phone
+//     }
+//     actions.createContact(contact)
+
+//     // console.log(fullName,email,phone,address);
+// }
+// ----------Otra Forma -----------DE---PASAR ESTA FUNCION AL EVENTO onSubmit------------------------//

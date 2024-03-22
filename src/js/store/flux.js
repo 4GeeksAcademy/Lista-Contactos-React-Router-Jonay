@@ -27,17 +27,22 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 			},
 			createContact: function (contact) {
 				fetch('https://playground.4geeks.com/apis/fake/contact/',{
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: {
-					"full_name": "Dave Bradley",
-					"email": "dave@gmail.com",
-					"agenda_slug": "jonay",
-					"address":"47568 NW 34ST, 33434 FL, USA",
-					"phone":"7864445566"
-				}
-			})
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						"full_name": contact.fullName,
+						"email": contact.email,
+						"agenda_slug": "jonay",
+						"address":contact.address,
+						"phone":contact.phone
+					})
+
+				// 	body: JSON.stringify(contact) /**---HAY varias FORMAS DE modificar añadir la info del formulario en un nuevo contacto --//
+                                                        //----------ESTA ES LA SEGUNDA JUNTO AL handleSubmit de addcontact-----*///
+					
+				})
 				.then((response)=>response.json())
 				.then((data)=>setStore({contacts: data}))
 				.catch((error)=>console.log(error))
@@ -49,6 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				.then((data)=>setStore({contacts: data}))
 				.catch((error)=>console.log(error))
 			},
+			
 			////// -------------Esta funcion elimina una position del Array por su indice----------------------////
 			// function deletecontact(position) {
 			// 	const arrayfiltered = agenda.filter((item, index) => index !== position)

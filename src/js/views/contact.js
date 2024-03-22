@@ -10,38 +10,34 @@ export const Contact = () => {
 
 	// console.log(useContext(Context));
 
-	const {store, actions}= useContext(Context) // DESTRUCTURING DE OBJETOS (esto se hace SIEMPRE)
-		// console.log(store.demo);   // DENTRO DE DEMO HAY UN ARRAY Y HAY QUE HACER UN .map PARA CONSULTARLO//
+	const { store, actions } = useContext(Context) // DESTRUCTURING DE OBJETOS (esto se hace SIEMPRE)
+	// console.log(store.demo);   // DENTRO DE DEMO HAY UN ARRAY Y HAY QUE HACER UN .map PARA CONSULTARLO//
 
-	// ---------------CREAR UNA ---- function create() --------------///
-	
+	// console.log(store.contacts); // Esta informacion la pasamos a flux en el Store por eso la llamamos así store.contacts
 
-// console.log(store.contacts); // Esta informacion la pasamos a flux en el Store por eso la llamamos así store.contacts
-
-	useEffect(()=>{
+	useEffect(() => {
 		actions.getAllContacts()
-	},[])
+	}, [])
 
 	return (
-	<div>
-		<div className="boton-contact">
-			<Link to="/addcontact">
-				<button className="btn btn-success">Add new contact</button>
-			</Link>
-		</div>
-				{
-					store.contacts.map((contact) => {
-						return (
-						<li key={contact.id}> 
-							<ContactCard contact={contact}/> 
+		<div>
+			<div className="boton-contact">
+				<Link to="/addcontact">
+					<button className="btn btn-success">Add new contact</button>
+				</Link>
+			</div>
+			{
+				store.contacts.map((contact) => {
+					return (
+						<li key={contact.id}>
+							<ContactCard contact={contact} />
 							<ModalDelete />
 						</li>
-						
-						)
-					})
-				}
-  	</div>
-);
+					)
+				})
+			}
+		</div>
+	);
 };
 
 
