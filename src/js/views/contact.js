@@ -3,6 +3,7 @@ import { Context } from "../store/appContext.js"; //2. importar el contexto
 import "../../styles/contact.css";
 import { Link } from "react-router-dom";
 import { ContactCard } from "../component/contactCard.jsx";
+import { ModalDelete } from "../component/modalDelete.jsx";
 
 export const Contact = () => {
 
@@ -11,14 +12,6 @@ export const Contact = () => {
 
 	const {store, actions}= useContext(Context) // DESTRUCTURING DE OBJETOS (esto se hace SIEMPRE)
 		// console.log(store.demo);   // DENTRO DE DEMO HAY UN ARRAY Y HAY QUE HACER UN .map PARA CONSULTARLO//
-
-	
-////// -------------Esta funcion elimina una position del Array por su indice----------------------////
-// function deletecontact(position) {
-// 	const arrayfiltered = agenda.filter((item, index) => index !== position)
-// 	setAgenda(arrayfiltered)
-// 	putTask(arrayfiltered);
-// 	}
 
 	// ---------------CREAR UNA ---- function create() --------------///
 	
@@ -41,10 +34,30 @@ export const Contact = () => {
 						return (
 						<li key={contact.id}> 
 							<ContactCard contact={contact}/> 
+							<ModalDelete />
 						</li>
+						
 						)
 					})
 				}
   	</div>
 );
 };
+
+
+{/* <div className="blog container">
+			<input className="list container border-0 py-3" type="text" 
+					onChange={(event) => {setNewTask(event.target.value)}} 
+					onKeyDown={writeTask} value={newTask} placeholder="Añadir nueva tarea"/>
+					
+			<ul className="list-group list-group-flush">
+					{tasks.map((task,index) => { return (<li className="list-group-item py-3 ms-3" key={index}> {task.label}   
+						<span className="delete" onClick={() => deletetask(index)}><i className="fa-solid fa-xmark"></i></span></li>)
+					}
+					)}	
+			</ul>
+				<div className="contador border-top p-3"><span>{tasks.length} tasks</span></div>	
+		</div>
+		<div>
+			<span className="buttonDelete" onClick={() => deleteList()}><button className="btn btn-danger mt-4" type="button">DELETE</button></span>
+			</div> */}

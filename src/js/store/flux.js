@@ -12,8 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 					background: "white",
 					initial: "white"
 				}
-			], 
-			contacts: []
+			],
+			contacts: [{}]
 		},
 		actions: { // EN ACTIONS SE GUARDAN TODAS LAS FUNCIONES GLOBALES
 			// Use getActions to call a function within a fuction
@@ -21,11 +21,11 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				getActions().changeColor(0, "green");
 			},
 			loadSomeData: () => {
-				/** 
+				/**
 				   fetch().then().then()(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			createContact: function () {
+			createContact: function (contact) {
 				fetch('https://playground.4geeks.com/apis/fake/contact/',{
 				headers: {
 					"Content-Type": "application/json"
@@ -39,16 +39,22 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				}
 			})
 				.then((response)=>response.json())
-				.then((data)=>console.log({contact: data}))
+				.then((data)=>setStore({contacts: data}))
 				.catch((error)=>console.log(error))
 			},
+
 			getAllContacts: function () {
 				fetch('https://playground.4geeks.com/apis/fake/contact/agenda/jonay')
 				.then((response)=>response.json())
 				.then((data)=>setStore({contacts: data}))
 				.catch((error)=>console.log(error))
 			},
-
+			////// -------------Esta funcion elimina una position del Array por su indice----------------------////
+			// function deletecontact(position) {
+			// 	const arrayfiltered = agenda.filter((item, index) => index !== position)
+			// 	setAgenda(arrayfiltered)
+			// 	putTask(arrayfiltered);
+			// 	}
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
