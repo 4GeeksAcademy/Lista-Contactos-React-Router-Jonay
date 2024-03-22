@@ -1,25 +1,32 @@
-.agenda {
+/* .agenda {
     margin-left: 30px;
     margin-right: 30px;
-}
-/* .description {
-    display: flex;
-    flex-direction: row;
 } */
+.card {
+    margin-right: 30px !important;
+    margin-left: 30px !important;
+    display: flex;
+    align-content: stretch;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .add-del {
     display: flex;
     justify-content: end;
-    vertical-align: top;
-    
+    margin-right: 30px;
+    margin-top: 10px;
 }
-.description {
+/* .description {
     display: inline-block;
     justify-content: center;
     align-content: center;
     margin-left: 100px;
     margin-top: 20px;
-}
+} */
 /* .container {
     width: auto;
     height: 200px;

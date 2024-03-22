@@ -31,7 +31,6 @@ function handleSubmit(e) {
     // console.log(fullName,email,phone,address);
 }
 
-
 // Crear evento OnSubmit
 	return (
         <div className="form">

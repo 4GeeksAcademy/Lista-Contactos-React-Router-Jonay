@@ -54,7 +54,14 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				.then((data)=>setStore({contacts: data}))
 				.catch((error)=>console.log(error))
 			},
-			
+			deleteContact: function () {
+				fetch('https://playground.4geeks.com/apis/fake/contact/id', {
+				method: 'DELETE',
+			})
+				.then((response)=>response.json())
+				.then((data)=>setStore({contacts: data}))
+				.catch((error)=>console.log(error))
+			},
 			////// -------------Esta funcion elimina una position del Array por su indice----------------------////
 			// function deletecontact(position) {
 			// 	const arrayfiltered = agenda.filter((item, index) => index !== position)
