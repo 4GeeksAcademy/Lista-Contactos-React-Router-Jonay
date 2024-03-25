@@ -24,7 +24,8 @@ function handleSubmit(e) {
 		phone
     }
     actions.createContact(contact)
-    // setFullName({}),
+    // store.contacts()
+    // setFullName(""),
     // setEmail({}),
     // setAddress({}),
     // setPhone({})

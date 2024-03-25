@@ -13,7 +13,8 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 					initial: "white"
 				}
 			],
-			contacts: [{}]
+			contacts: [],
+			// deleteId: ""
 		},
 		actions: { // EN ACTIONS SE GUARDAN TODAS LAS FUNCIONES GLOBALES
 			// Use getActions to call a function within a fuction
@@ -54,12 +55,12 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				.then((data)=>setStore({contacts: data}))
 				.catch((error)=>console.log(error))
 			},
-			deleteContact: function () {
-				fetch('https://playground.4geeks.com/apis/fake/contact/id', {
-				method: 'DELETE',
+			deleteContact: function (id) {
+				fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+				method: 'DELETE'
 			})
 				.then((response)=>response.json())
-				.then((data)=>setStore({contacts: data}))
+				.then((data)=>console.log({contacts: data}))
 				.catch((error)=>console.log(error))
 			},
 			////// -------------Esta funcion elimina una position del Array por su indice----------------------////
