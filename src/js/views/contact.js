@@ -7,10 +7,10 @@ import { ModalDelete } from "../component/modalDelete.jsx";
 
 export const Contact = () => {
 
-	const [state,setState] = useState({
-		show: "none"
-				})
-			console.log(state);
+	// const [state,setState] = useState({
+	// 	show: "none"
+	// 			})
+	// 		console.log(state);
 	// console.log(useContext(Context));
 
 	const { store, actions } = useContext(Context) // DESTRUCTURING DE OBJETOS (esto se hace SIEMPRE)
