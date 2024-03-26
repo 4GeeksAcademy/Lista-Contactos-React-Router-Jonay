@@ -9,6 +9,7 @@ import { Contact } from "./views/contact";
 import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer";
+import { EditContact } from "./views/editcontact";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -22,6 +23,7 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Contact />} />
 						<Route path="/addcontact" element={<AddContact />} />
+						<Route path="/editContact" element={<EditContact />} />
 						{/* <Route path="/single/:theid" element={<Single />} /> */}
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>

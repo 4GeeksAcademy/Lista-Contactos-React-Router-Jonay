@@ -14,6 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				}
 			],
 			contacts: [],
+			contact: {}
 			// deleteId: ""
 		},
 		actions: { // EN ACTIONS SE GUARDAN TODAS LAS FUNCIONES GLOBALES
@@ -25,6 +26,11 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				/**
 				   fetch().then().then()(data => setStore({ "foo": data.bar }))
 				*/
+			},
+			seeContact: (contact) => {
+					setStore({
+						contact: contact
+					})
 			},
 			createContact: function (contact) {
 				fetch('https://playground.4geeks.com/apis/fake/contact/',{
