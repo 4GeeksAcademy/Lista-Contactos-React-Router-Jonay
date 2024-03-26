@@ -7,10 +7,12 @@ export const ModalDelete = () => {
 
     const { store, actions } = useContext(Context)
     // console.log(id);
-
+    function handleDelete() {
+		actions.deleteContact(contact.id)
+	}
     return (
         <div>
-            <div className="modal" tabIndex="-1" role="dialog">
+            <div className="modal" tabIndex="-1" role="dialog">  {/* //--style={{display: prop.showModal()}} */}
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -23,7 +25,7 @@ export const ModalDelete = () => {
                             <p>Modal body text goes here.</p>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Save changes</button>
+                            <button type="button" className="btn btn-primary" onClick={handleDelete}>Save changes</button>
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>

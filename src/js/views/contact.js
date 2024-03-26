@@ -7,7 +7,10 @@ import { ModalDelete } from "../component/modalDelete.jsx";
 
 export const Contact = () => {
 
-
+	const [state,setState] = useState({
+		show: "none"
+				})
+			console.log(state);
 	// console.log(useContext(Context));
 
 	const { store, actions } = useContext(Context) // DESTRUCTURING DE OBJETOS (esto se hace SIEMPRE)
@@ -29,9 +32,13 @@ export const Contact = () => {
 			{
 				store.contacts.map((contact) => {
 					return (
+						
 						<li key={contact.id}>
-							<ContactCard contact={contact} />
+							<ContactCard contact={contact}/> 
 							<ModalDelete />
+
+							{/* <ContactCard contact={contact} showModal={()=>setState({show:"block"})}/>
+							<ModalDelete show={state.show}/> */}
 						</li>
 					)
 				})

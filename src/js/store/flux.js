@@ -51,8 +51,11 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 					
 				})
 				.then((response)=>response.json())
-				.then((data)=>{setStore({contacts: data});
-							getActions().getAllContacts()})
+				.then((data)=>{console.log(response);
+					if (response.ok) {
+						getActions().getAllContacts()
+					}
+				})
 				.catch((error)=>console.log(error))
 			},
 
@@ -71,12 +74,6 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 							   getActions().getAllContacts()})
 				.catch((error)=>console.log(error))
 			},
-			////// -------------Esta funcion elimina una position del Array por su indice----------------------////
-			// function deletecontact(position) {
-			// 	const arrayfiltered = agenda.filter((item, index) => index !== position)
-			// 	setAgenda(arrayfiltered)
-			// 	putTask(arrayfiltered);
-			// 	}
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
