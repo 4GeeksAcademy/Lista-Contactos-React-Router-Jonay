@@ -51,7 +51,8 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 					
 				})
 				.then((response)=>response.json())
-				.then((data)=>setStore({contacts: data}))
+				.then((data)=>{setStore({contacts: data});
+							getActions().getAllContacts()})
 				.catch((error)=>console.log(error))
 			},
 
@@ -66,7 +67,8 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				method: 'DELETE'
 			})
 				.then((response)=>response.json())
-				.then((data)=>console.log({contacts: data}))
+				.then((data)=>{console.log({contacts: data});
+							   getActions().getAllContacts()})
 				.catch((error)=>console.log(error))
 			},
 			////// -------------Esta funcion elimina una position del Array por su indice----------------------////
