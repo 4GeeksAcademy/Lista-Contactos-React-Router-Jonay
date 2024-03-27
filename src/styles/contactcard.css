@@ -9,9 +9,11 @@
     align-content: stretch;
 }
 .description {
-    display: flex;
+    width: auto;
+    display: inline-block;
     flex-direction: column;
     justify-content: center;
+    margin-left: 100px;
 }
 
 .add-del {
@@ -19,6 +21,9 @@
     justify-content: end;
     margin-right: 30px;
     margin-top: 10px;
+}
+.delete{
+    margin-right: 50px;
 }
 /* .description {
     display: inline-block;
