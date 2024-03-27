@@ -7,11 +7,11 @@ import { ModalDelete } from "../component/modalDelete.jsx";
 
 export const Contact = () => {
 
-	// const [state,setState] = useState({
-	// 	show: "none"
-	// 			})
-	// 		console.log(state);
-	// console.log(useContext(Context));
+	const [state,setState] = useState({
+		show: "none"
+				})
+			console.log(state);
+	console.log(useContext(Context));
 
 	const { store, actions } = useContext(Context) // DESTRUCTURING DE OBJETOS (esto se hace SIEMPRE)
 	// console.log(store.demo);   // DENTRO DE DEMO HAY UN ARRAY Y HAY QUE HACER UN .map PARA CONSULTARLO//
@@ -34,11 +34,13 @@ export const Contact = () => {
 					return (
 						
 						<div key={contact.id}>
-							<ContactCard contact={contact}/> 
-							<ModalDelete />
+							{/* <ContactCard contact={contact} /> 
+							<ModalDelete /> */}
 
-							{/* <ContactCard contact={contact} showModal={()=>setState({show:"block"})}/>
-							<ModalDelete show={state.show}/> */}
+							<ContactCard contact={contact} 
+							showModal={()=>setState({show:"block"})}
+							/>
+							<ModalDelete show={state.show}/>
 						</div>
 					)
 				})

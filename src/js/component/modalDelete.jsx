@@ -3,16 +3,19 @@ import { Context } from "../store/appContext.js";
 // import "../../styles/modalDelete.css";
 
 
-export const ModalDelete = () => {
+export const ModalDelete = (props) => {
 
+    console.log(props.show);
     const { store, actions } = useContext(Context)
     // console.log(id);
+
     function handleDelete() {
 		actions.deleteContact(contact.id)
 	}
+
     return (
         <div>
-            <div className="modal" tabIndex="-1" role="dialog">  {/* //--style={{display: prop.showModal()}} */}
+            <div className="modal" tabIndex="-1" role="dialog" style={{display:props.show}}>  {/* //--style={{display: prop.showModal()}} */}
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">

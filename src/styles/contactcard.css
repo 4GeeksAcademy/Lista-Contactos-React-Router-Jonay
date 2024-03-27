@@ -19,7 +19,7 @@
 .add-del {
     display: flex;
     justify-content: end;
-    margin-right: 30px;
+    margin-right: 20px;
     margin-top: 10px;
 }
 .delete{
