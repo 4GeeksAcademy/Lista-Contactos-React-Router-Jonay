@@ -33,13 +33,13 @@ export const Contact = () => {
 				store.contacts.map((contact) => {
 					return (
 						
-						<li key={contact.id}>
+						<div key={contact.id}>
 							<ContactCard contact={contact}/> 
 							<ModalDelete />
 
 							{/* <ContactCard contact={contact} showModal={()=>setState({show:"block"})}/>
 							<ModalDelete show={state.show}/> */}
-						</li>
+						</div>
 					)
 				})
 			}

@@ -16,7 +16,7 @@ export const ContactCard = ({ contact }) => {
 	}
 
 	return (
-		<div className="card m-0">
+		<div className="card m-3">
 			<div className="card-body m-0">
 				<div className="add-del">
 					<span className="edit" onClick={() => {
