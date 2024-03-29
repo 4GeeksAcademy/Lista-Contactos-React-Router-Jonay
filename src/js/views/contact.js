@@ -29,11 +29,12 @@ export const Contact = () => {
 		<div>
 			<div className="boton-contact">
 				<Link to="/addcontact">
+					
 					<button className="btn btn-success">Add new contact</button>
 				</Link>
 			</div>
 			{
-				store.contacts.map((contact) => {
+				store.contacts && store.contacts.length > 0 && store.contacts.map((contact) => {
 					return (
 						
 						<div key={contact.id}>
@@ -44,11 +45,16 @@ export const Contact = () => {
 							setModal={setState}
 							setContactToDelete={setContactToDelete}
 							/> 
-							<ModalDelete /* aqui al ModalDelete le paso el estado, la funcion que modifica ese estado y el contacto a eliminar*/
+							<ModalDelete 
 							setModal={setState}
 							stateModal={state}
 							contact={contactToDelete}
 							/>
+							{/* <ModalDelete /* aqui al ModalDelete le paso el estado, la funcion que modifica ese estado y el contacto a eliminar
+							setModal={setState.show} 
+							stateModal={state.show} 
+							contact={contactToDelete}
+							/> */} */
 
 						
 						</div>
@@ -58,21 +64,3 @@ export const Contact = () => {
 		</div>
 	);
 };
-
-
-{/* <div className="blog container">
-			<input className="list container border-0 py-3" type="text" 
-					onChange={(event) => {setNewTask(event.target.value)}} 
-					onKeyDown={writeTask} value={newTask} placeholder="Añadir nueva tarea"/>
-					
-			<ul className="list-group list-group-flush">
-					{tasks.map((task,index) => { return (<li className="list-group-item py-3 ms-3" key={index}> {task.label}   
-						<span className="delete" onClick={() => deletetask(index)}><i className="fa-solid fa-xmark"></i></span></li>)
-					}
-					)}	
-			</ul>
-				<div className="contador border-top p-3"><span>{tasks.length} tasks</span></div>	
-		</div>
-		<div>
-			<span className="buttonDelete" onClick={() => deleteList()}><button className="btn btn-danger mt-4" type="button">DELETE</button></span>
-			</div> */}
