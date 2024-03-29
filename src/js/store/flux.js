@@ -51,8 +51,8 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 					
 				})
 				.then((response)=>response.json())
-				.then((data)=>{console.log(response);
-					if (response.ok) {
+				.then((data)=>{console.log(data);
+					if (data.ok) {
 						getActions().getAllContacts()
 					}
 				})

@@ -9,9 +9,12 @@ export const Contact = () => {
 
 	const [state,setState] = useState({
 		show: "none"
-				})
-			console.log(state);
-	console.log(useContext(Context));
+	})
+	const [contactToDelete, setContactToDelete] = useState({}) //Esto es para almacenar el contacto que quiero eliminar cuando muestre el modal
+	
+	// console.log(state);
+
+	// console.log(useContext(Context));
 
 	const { store, actions } = useContext(Context) // DESTRUCTURING DE OBJETOS (esto se hace SIEMPRE)
 	// console.log(store.demo);   // DENTRO DE DEMO HAY UN ARRAY Y HAY QUE HACER UN .map PARA CONSULTARLO//
@@ -34,13 +37,20 @@ export const Contact = () => {
 					return (
 						
 						<div key={contact.id}>
-							{/* <ContactCard contact={contact} /> 
-							<ModalDelete /> */}
-
-							<ContactCard contact={contact} 
-							showModal={()=>setState({show:"block"})}
+							<ContactCard /* cuando llamo al componente ContactCard le paso 3 props:
+											el contacto, la funcion para modificar el estado del modal y
+											la funcion para modificar el estado del contacto a eliminar*/
+							contact={contact} 
+							setModal={setState}
+							setContactToDelete={setContactToDelete}
+							/> 
+							<ModalDelete /* aqui al ModalDelete le paso el estado, la funcion que modifica ese estado y el contacto a eliminar*/
+							setModal={setState}
+							stateModal={state}
+							contact={contactToDelete}
 							/>
-							<ModalDelete show={state.show}/>
+
+						
 						</div>
 					)
 				})
