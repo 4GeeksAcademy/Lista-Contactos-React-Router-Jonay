@@ -33,13 +33,13 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 					})
 			},
 			createContact: function (contact) {
-				fetch('https://playground.4geeks.com/apis/fake/contact/',{
+				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts',{
 					method: 'POST',
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						"full_name": contact.fullName,
+						"name": contact.fullName,
 						"email": contact.email,
 						"agenda_slug": "jonay",
 						"address":contact.address,
@@ -60,13 +60,13 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 			},
 
 			getAllContacts: function () {
-				fetch('https://playground.4geeks.com/apis/fake/contact/agenda/jonay')
+				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts')
 				.then((response)=>response.json())
 				.then((data)=>setStore({contacts: data}))
 				.catch((error)=>console.log(error))
 			},
 			deleteContact: function (id) {
-				fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+				fetch(`https://playground.4geeks.com/contact/agendas/jonay/contacts/${id}`, {
 				method: 'DELETE'
 			})
 				.then((response)=>response.json())

@@ -26,7 +26,7 @@ export const EditContact = () => {
                 'Content-Type': 'application/json'
             }
         }
-        fetch(`https://playground.4geeks.com/apis/fake/contact/${contact.id}`, config)
+        fetch(`https://playground.4geeks.com/contact/agendas/jonay/contacts/${contact.id}`, config)
             .then((response) => response.json())
             .then((data) => {
                 actions.getAllContacts()
@@ -43,7 +43,7 @@ export const EditContact = () => {
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="exampleInputName" className="form-label"> Full name</label>
-                    <input type="text" name="full_name" className="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Full name" value={contact.full_name} onChange={(e) => handleChange(e)} />
+                    <input type="text" name="name" className="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Full name" value={contact.name} onChange={(e) => handleChange(e)} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
