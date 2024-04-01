@@ -38,7 +38,7 @@ export const Contact = () => {
 					return (
 						
 						<div key={contact.id}>
-							<ContactCard /* cuando llamo al componente ContactCard le paso 3 props:
+							<ContactCard  /*cuando llamo al componente ContactCard le paso 3 props:
 											el contacto, la funcion para modificar el estado del modal y
 											la funcion para modificar el estado del contacto a eliminar*/
 							contact={contact} 
@@ -54,7 +54,7 @@ export const Contact = () => {
 							setModal={setState.show} 
 							stateModal={state.show} 
 							contact={contactToDelete}
-							/> */} */
+							/> */} 
 
 						
 						</div>

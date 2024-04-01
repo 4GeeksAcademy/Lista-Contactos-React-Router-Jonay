@@ -5,7 +5,7 @@ import { Context } from "../store/appContext.js";
 
 export const ModalDelete = ({ setModal, stateModal, contact}) => { /* Aqui le digo que recibe estas 3 propiedades*/
 
-    console.log(stateModal.show);
+    // console.log(stateModal.show);
     const { store, actions } = useContext(Context)
     // console.log(id);
 

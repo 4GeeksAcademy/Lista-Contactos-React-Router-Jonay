@@ -61,7 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 			getAllContacts: function () {
 				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts')
 				.then((response)=>response.json())
-				.then((data)=>setStore({contacts: data}))
+				.then((data)=>setStore({contacts: data.contacts}))
 				.catch((error)=>console.log(error))
 			},
 			deleteContact: function (id) {
