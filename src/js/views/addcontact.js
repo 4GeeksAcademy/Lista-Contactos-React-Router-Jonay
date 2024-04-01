@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export const AddContact = () => {
 
-    const [fullName, setFullName] = useState("")
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
@@ -20,7 +20,7 @@ export const AddContact = () => {
     function handleSubmit(e) {
         e.preventDefault()
         const contact = {
-            fullName,
+            name,
             email,
             address,
             phone
@@ -43,8 +43,8 @@ export const AddContact = () => {
             <h1 className="title">Add a new contact</h1>
             <form onSubmit={handleSubmit} >
                 <div className="mb-3">
-                    <label htmlFor="exampleInputName" className="form-label"> Full name</label>
-                    <input type="text" className="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Full name" onChange={(event) => { setFullName(event.target.value) }} />
+                    <label htmlFor="exampleInputName" className="form-label"> Name</label>
+                    <input type="text" className="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Full name" onChange={(event) => { setName(event.target.value) }} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>

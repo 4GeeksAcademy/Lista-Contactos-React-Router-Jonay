@@ -39,10 +39,11 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 						"accept": "application/json"
 					},
 					body: JSON.stringify({
-						"name": contact.fullName,
+						"name": contact.name,
 						"phone":contact.phone,
 						"email": contact.email,
 						"address":contact.address
+						// "id":contact.id
 					})
 
 				// 	body: JSON.stringify(contact) /**---HAY varias FORMAS DE modificar añadir la info del formulario en un nuevo contacto --//
@@ -61,7 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 			getAllContacts: function () {
 				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts')
 				.then((response)=>response.json())
-				.then((data)=>setStore({contacts: data.contacts}))
+				.then((data)=>setStore({ contacts: data.contacts }))
 				.catch((error)=>console.log(error))
 			},
 			deleteContact: function (id) {
@@ -69,7 +70,7 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				method: 'DELETE'
 			})
 				.then((response)=>response.json())
-				.then((data)=>{console.log({contacts: data});
+				.then((data)=>{setStore({contacts: data.contacts }) /*setStore???*/
 							   getActions().getAllContacts()})
 				.catch((error)=>console.log(error))
 			},
