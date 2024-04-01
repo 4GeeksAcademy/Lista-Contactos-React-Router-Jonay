@@ -36,14 +36,13 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts',{
 					method: 'POST',
 					headers: {
-						"Content-Type": "application/json"
+						"accept": "application/json"
 					},
 					body: JSON.stringify({
 						"name": contact.fullName,
+						"phone":contact.phone,
 						"email": contact.email,
-						"agenda_slug": "jonay",
-						"address":contact.address,
-						"phone":contact.phone
+						"address":contact.address
 					})
 
 				// 	body: JSON.stringify(contact) /**---HAY varias FORMAS DE modificar añadir la info del formulario en un nuevo contacto --//
