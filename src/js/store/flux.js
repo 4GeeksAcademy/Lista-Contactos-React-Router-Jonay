@@ -31,12 +31,13 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 					setStore({
 						contact: contact
 					})
+					
 			},
 			createContact: function (contact) {
 				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts',{
 					method: 'POST',
 					headers: {
-						"accept": "application/json"
+						"content-type": "application/json"
 					},
 					body: JSON.stringify({
 						"name": contact.name,
@@ -61,7 +62,13 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 
 			getAllContacts: function () {
 				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts')
-				.then((response)=>response.json())
+				.then((response)=>{
+					console.log(response);
+					if (response.status === 404) {
+						createUser()
+					}
+					return response.json()
+				})
 				.then((data)=>setStore({ contacts: data.contacts }))
 				.catch((error)=>console.log(error))
 			},
@@ -69,11 +76,21 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				fetch(`https://playground.4geeks.com/contact/agendas/jonay/contacts/${id}`, {
 				method: 'DELETE'
 			})
-				.then((response)=>response.json())
-				.then((data)=>{setStore({contacts: data.contacts }) /*setStore???*/
-							   getActions().getAllContacts()})
+				.then((response)=>{ if (response.ok) getActions().getAllContacts()})
 				.catch((error)=>console.log(error))
 			},
+			createUser: function() {
+				fetch('https://playground.4geeks.com/contact/agendas/jonay', {
+					method:'POST',
+					body: JSON.stringify(""),
+					headers:{
+						"Content-Type": "application/json"
+					}
+				})
+				.then((response)=>response.json())
+				.then((data)=>console.log(data))
+				.catch((error)=>console.log(error))
+			 },
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

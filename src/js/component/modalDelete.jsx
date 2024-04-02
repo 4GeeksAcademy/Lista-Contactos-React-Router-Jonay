@@ -10,9 +10,9 @@ export const ModalDelete = ({ setModal, stateModal, contact}) => { /* Aqui le di
     // console.log(id);
 
     function handleDelete() { /* cuando hago click en la papelera llamo a mi funcion y le paso el id y uso el setModal none para que se cierre*/
+       console.log(contact);
         actions.deleteContact(contact.id)
         setModal({ show: "none"})
-        console.log("borrar");  
 	}
 
 

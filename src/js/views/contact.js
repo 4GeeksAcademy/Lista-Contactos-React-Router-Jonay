@@ -48,7 +48,7 @@ export const Contact = () => {
 							<ModalDelete 
 							setModal={setState}
 							stateModal={state}
-							contact={contactToDelete}
+							contact={contact}
 							/>
 							{/* <ModalDelete /* aqui al ModalDelete le paso el estado, la funcion que modifica ese estado y el contacto a eliminar
 							setModal={setState.show} 
