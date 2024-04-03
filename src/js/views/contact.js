@@ -10,7 +10,7 @@ export const Contact = () => {
 	const [state,setState] = useState({
 		show: "none"
 	})
-	const [contactToDelete, setContactToDelete] = useState({}) //Esto es para almacenar el contacto que quiero eliminar cuando muestre el modal
+	// const [contactToDelete, setContactToDelete] = useState({}) //Esto es para almacenar el contacto que quiero eliminar cuando muestre el modal
 	
 	// console.log(state);
 
@@ -43,19 +43,13 @@ export const Contact = () => {
 											la funcion para modificar el estado del contacto a eliminar*/
 							contact={contact} 
 							setModal={setState}
-							setContactToDelete={setContactToDelete}
+							// setContactToDelete={setContactToDelete}
 							/> 
 							<ModalDelete 
 							setModal={setState}
 							stateModal={state}
 							contact={contact}
 							/>
-							{/* <ModalDelete /* aqui al ModalDelete le paso el estado, la funcion que modifica ese estado y el contacto a eliminar
-							setModal={setState.show} 
-							stateModal={state.show} 
-							contact={contactToDelete}
-							/> */} 
-
 						
 						</div>
 					)

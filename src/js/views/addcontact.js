@@ -37,7 +37,6 @@ export const AddContact = () => {
         // console.log(fullName,email,phone,address);
     }
 
-    // Crear evento OnSubmit
     return (
         <div className="form">
             <h1 className="title">Add a new contact</h1>

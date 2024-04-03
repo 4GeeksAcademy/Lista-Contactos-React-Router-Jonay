@@ -14,8 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				}
 			],
 			contacts: [],
-			contact: {}
-			// deleteId: ""
+			contact: {},
+			contactToDelete: {}
 		},
 		actions: { // EN ACTIONS SE GUARDAN TODAS LAS FUNCIONES GLOBALES
 			// Use getActions to call a function within a fuction
@@ -28,69 +28,73 @@ const getState = ({ getStore, getActions, setStore }) => { //getStore(), getActi
 				*/
 			},
 			seeContact: (contact) => {
-					setStore({
-						contact: contact
-					})
-					
+				setStore({
+					contact: contact
+				})
+
 			},
 			createContact: function (contact) {
-				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts',{
+				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts', {
 					method: 'POST',
 					headers: {
 						"content-type": "application/json"
 					},
 					body: JSON.stringify({
 						"name": contact.name,
-						"phone":contact.phone,
+						"phone": contact.phone,
 						"email": contact.email,
-						"address":contact.address
+						"address": contact.address
 						// "id":contact.id
 					})
 
-				// 	body: JSON.stringify(contact) /**---HAY varias FORMAS DE modificar añadir la info del formulario en un nuevo contacto --//
-                                                        //----------ESTA ES LA SEGUNDA JUNTO AL handleSubmit de addcontact-----*///
-					
+					// 	body: JSON.stringify(contact) /**---HAY varias FORMAS DE modificar añadir la info del formulario en un nuevo contacto --//
+					//----------ESTA ES LA SEGUNDA JUNTO AL handleSubmit de addcontact-----*///
+
 				})
-				.then((response)=>response.json())
-				.then((data)=>{
-					if (data.ok) {
-						getActions().getAllContacts()
-					}
-				})
-				.catch((error)=>console.log(error))
+					.then((response) => response.json())
+					.then((data) => {
+						if (data.ok) {
+							getActions().getAllContacts()
+						}
+					})
+					.catch((error) => console.log(error))
 			},
 
 			getAllContacts: function () {
 				fetch('https://playground.4geeks.com/contact/agendas/jonay/contacts')
-				.then((response)=>{
-					console.log(response);
-					if (response.status === 404) {
-						createUser()
-					}
-					return response.json()
-				})
-				.then((data)=>setStore({ contacts: data.contacts }))
-				.catch((error)=>console.log(error))
+					.then((response) => {
+						console.log(response);
+						if (response.status === 404) {
+							getActions().createUser()
+						}
+						return response.json()
+					})
+					.then((data) => setStore({ contacts: data.contacts }))
+					.catch((error) => console.log(error))
 			},
 			deleteContact: function (id) {
+				console.log();
 				fetch(`https://playground.4geeks.com/contact/agendas/jonay/contacts/${id}`, {
-				method: 'DELETE'
-			})
-				.then((response)=>{ if (response.ok) getActions().getAllContacts()})
-				.catch((error)=>console.log(error))
+					method: 'DELETE'
+				})
+					.then((response) => { if (response.ok) getActions().getAllContacts() })
+					.catch((error) => console.log(error))
 			},
-			createUser: function() {
+			contactToDelete: function (contact) {
+				setStore({ contactToDelete: contact })
+			},
+			createUser: function () {
 				fetch('https://playground.4geeks.com/contact/agendas/jonay', {
-					method:'POST',
+					method: 'POST',
 					body: JSON.stringify(""),
-					headers:{
+					headers: {
 						"Content-Type": "application/json"
 					}
 				})
-				.then((response)=>response.json())
-				.then((data)=>console.log(data))
-				.catch((error)=>console.log(error))
-			 },
+					.then((response) => response.json())
+					.then((data) => console.log(data))
+					.catch((error) => console.log(error))
+			},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
